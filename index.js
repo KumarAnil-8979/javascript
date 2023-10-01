@@ -37,7 +37,10 @@ let score=33;
 //"33"=>33
 //"33abc"=>NaN
 //true=>1; false=>0; 
-
+//console.log(Number(null)); //0
+//console.log(Number(undefined)); //NaN
+//console.log(parseInt(undefined)); //NaN
+//console.log(parseInt('312abui')); //312
 
 
 //into Boolean
@@ -100,15 +103,17 @@ const y=x++;
 //  console.log("02">1);
 
 
-// console.log(null>0);
-// console.log(null==0);
-// console.log(null===0);
-// console.log(null>=0);
+// console.log(null>0); //false 
+// console.log(null==0);//false
+// console.log(null===0); //false
+// console.log(null>=0); //true
+// console.log(null<=0); // true
+
 
 
 // console.log(undefined==0);
 // console.log(undefined>0);
-// console.log(undefined<0);
+// console.log(undefined<0); // all value will give false 
 // console.log(undefined>=0);
 // console.log(undefined===0);
 
@@ -157,17 +162,17 @@ const myFunction=function(){
 
 let myName="anildotcom";
 let update=myName.slice(-2,myName.length)
-// console.log(update)
+ //console.log(update) // om
 
 
 
 
-const balance=new Number(100.56);
-// console.log(typeof balance.toString()); // change number to string
+const balance=new Number(100.5655);
+ console.log( balance.toString()); // change number to string
 
-// console.log(balance.toFixed(2))  //point ke baad kitna digit tak chahiye
+ console.log(balance.toFixed(2))  //point ke baad kitna digit tak chahiye  100.56
 
-// console.log(balance.toPrecision(4));
+ console.log(balance.toPrecision(4));   //total kitna digit chahiye  round up krega   100.5
 
 
 
@@ -190,13 +195,13 @@ const max=50;
 //*************date and time***************** */
 
 let myDate=new Date();
- console.log(myDate.toString())
+//  console.log(myDate.toString())
 
- console.log((myDate.toDateString()));
- console.log(myDate.toISOString());
- console.log(myDate.toJSON());
- console.log(myDate.toLocaleDateString());
- console.log(myDate.toLocaleString());
+//  console.log((myDate.toDateString()));
+//  console.log(myDate.toISOString());
+//  console.log(myDate.toJSON());
+//  console.log(myDate.toLocaleDateString());
+//  console.log(myDate.toLocaleString());
 
 
 
