@@ -64,15 +64,165 @@ const wholeArray=[...arr1,...arr2];
 
 let arr=[1,2,3,[4,5,6],7,[6,7,[4,9]]];
 let realArray=arr.flat(2);
-console.log(realArray);
+//console.log(realArray);
 
 
-console.log(Array.from("Anilkumar")); // from method change the data into i  array
+//console.log(Array.from("Anilkumar")); // from method change the data into a  array //["A","n","i","l",......]
 
-console.log(Array.from({name:"anil"}));
+//console.log(Array.from({name:"anil"}));
 
 
 const score1=100;
 const score2=200;
 const score3=300;
-console.log(Array.of(score1,score2,score3));
+//console.log(Array.of(score1,score2,score3)); //[100,200,3000]
+
+
+
+
+
+
+
+//**************object in  javascripts **********************8
+
+//singleton object: jab hum  contructor ke help se  object bante hai toh uske single object banta hai  like:---
+
+
+ //object.create()
+// object is standlone property with their property and types; js object  is collection of key and values pairs
+
+ //declare a symbol
+  
+const mySym=Symbol("key1");
+
+//console.log(typeof mySym); //symbol
+
+//object literals
+   
+
+ const user={
+    name:"anil",
+    "full name":"anil kumar",
+    [mySym]:"mykey1",//declation symbol in object by square brackets
+    age:23,
+    location :"gaya",
+    email:"anil123@gmail.com",
+    isLoggedIn:false,
+    lastLoginDays:["monday","Saturday"]
+}
+
+//access the object values:
+
+//method 1
+//console.log(user.name);
+//method 2
+//console.log(user["name"]);   // [iske ander string ke roop me dalna padega]
+//console.log(user["full name"]);
+
+//console.log(typeof(user[mySym])) // jab symbol  ko access krte hai toh  string ke roop me nhi likhate hai;
+
+
+
+//object freeze in js
+
+user.name="sunil";
+
+//console.log(user);
+//Object.freeze(user);
+user.name="suman";
+
+//console.log(user);
+
+
+user.greeting=function(){
+    console.log("Hello js user");
+}
+//console.log(user.greeting()); // function ke ander ke value ko print krega
+//console.log(user.greeting); // function print
+
+
+user.greetingTwo=function(){
+    console.log(`Hello js  user,${this.name}`);
+
+}
+
+//console.log(user.greetingTwo());
+
+
+
+
+
+
+//**********partII object*************
+
+const tinder=new Object(); // singlton object
+
+const tinderUser={} // non singlton object
+
+tinderUser.id="12345abc";
+tinderUser.name="sammy";
+tinderUser.isLoggedIn=false;
+
+//console.log(tinderUser);
+
+
+
+const regularUser={
+    email:"anil123@gmail.com",
+    fullName:{
+        userFullName:{
+            firstName:"anil",
+            lastname:"Kumar"
+        }
+    }
+}
+//console.log(regularUser.fullName.userFullName.firstName);
+
+
+
+const obj1={1:"a",2:"b"};
+
+const obj2={3:"a",4:"b"};
+
+const obj3= {obj1,obj2};
+
+//console.log(obj3); // obj3 me obj1 and obj2 ka value alag alag aayega
+
+//method 1
+const obj4=Object.assign({},obj1,obj2); // braket is optional 
+//console.log(obj4);
+
+//method 2 by spread operator
+ const obj5={...obj1,...obj2};
+ console.log(obj5);
+
+
+console.log(Object.keys(tinderUser)); // tinderuser object ke sara key value ko array me return kr dega
+
+console.log(Object.values(tinderUser)); //  Array(3) [ "12345abc", "sammy", false ]      sara value ko array me  print kr dega
+
+console.log(Object.entries(tinderUser));
+
+
+
+
+//******************object Destructuring************
+
+//destructuring  :it is technique  o upack value from arrays or properties from object into distinct variables;
+
+const course={
+    coursename:"js in hindi",
+    price:"999",
+    courseInstructure:"anil"
+}
+
+//object destructuring 
+
+const {courseInstructure}=course;
+console.log(courseInstructure);
+
+const {courseInstructure:instructor}=course;
+console.log(instructor);
+
+
+
