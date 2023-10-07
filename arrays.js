@@ -226,3 +226,231 @@ console.log(instructor);
 
 
 
+
+
+function loginUser(username){
+    return `${username}, just login  welcome`;
+}
+ //console.log(loginUser("hitesh"));
+
+
+//  console.log(loginUser()); //undefined 
+
+// // undefined and empty string falsy value hai
+
+
+// // cart 
+
+// function calculateCartPrice(... num1){   // rest operator used in function
+//     return  num1;
+// }
+// console.log(calculateCartPrice(200,300,455));  // sara  ko array ke roop me return kr dega [200,400,455]
+
+// const user={
+//     username:"anil",
+//     price:300
+// }
+// function handleObject(anyobject){   //pass argument in function as object
+//     console.log(`username is ${anyobject.username} and price is ${anyobject.price}`);
+// }
+// handleObject(user);
+
+
+// const mynewArr=[200,400,500,100,600];
+// function returnSecondValue(getarray){ //array as an argument in function
+//     return getarray[2];
+// }
+// console.log(returnSecondValue(mynewArr));
+
+
+
+
+
+// //****** scope **************
+
+
+// // scope: the scope is current context of execution in which values and expressions are visible or can be referenced scopes can 
+// // also be layred  in hierarchy so that child scope have acess to parent scopes but not vice verce
+
+
+
+// function one(){
+//     const username="anil";
+    
+//     function two(){
+//         const website="youtube";
+//         console.log(username);
+//     }
+//     two();
+// }
+
+// one()
+
+
+
+
+//arrow function  and this  keyword
+
+//console.log(this);  //node me empty object print krega
+
+
+// function chai(){
+//     let username="hitesh";
+//     console.log(this.username);  //undefined
+// }
+
+//chai();
+
+
+const chai1=function(){
+    let username="hitesh";  //undefined
+    console.log(this.username);
+}
+
+//chai1();
+
+
+const chai2=()=>{
+    let username ="hitesh";
+    console.log(this.username); //undefined
+}
+
+//chai2();
+
+//const addTwo=(num1,num2)=>num1+num2;   //emplicit return
+
+//const addTwo=(num1,num2)=>(num1+num2); // parenthesis me rap krna hai 
+
+const addTwo=(num1,num2)=>({username:"anil"}); //object return ke liye curly brackte lagana jaruri hai;
+
+// immediately Invoked Function Expression(IIFE)
+
+
+(function chai(){
+    console.log("DB connected");
+})(); // IIFE
+//IIFE :IIFE in js is one of the good ways to hide  data from global scope as it creates its own scope.
+
+
+
+(()=>{
+    console.log("Db conneted two");
+})();
+
+
+
+
+
+
+//How does js work behind the scene
+
+//javascript Execution context
+
+
+const coding=["js","ruby","java","python","cpp"];
+
+// coding.forEach( function (item){ //for each method does not return anything
+//     console.log(item);
+// });  
+
+function printme(item){
+    console.log(item);
+}
+coding.forEach(printme);
+ 
+
+coding.forEach( (item,index,arr)=>{
+    console.log(item,index,arr);
+})
+
+
+const mycoding=[
+    {
+    languageName:"js",
+    languageFileName:"javascript"
+    },
+    {
+    languageName:"java",
+    languageFileName:"java"
+    },
+    {
+    languageName:"python",
+    languageFileName:"py"
+    }
+
+]
+mycoding.forEach( (item)=>{
+    console.log(item.languageFileName);
+
+})
+
+
+//fiter map reduce  
+
+const myNum=[1,2,3,4,5,6,7,8,9,10];
+let newnum=myNum.filter((num)=>{
+     return num>4;
+})
+console.log(myNum)
+console.log(newnum);
+
+const newArr=[];
+myNum.forEach((num)=>{
+    if(num>4){
+        newArr.push(num)
+    }
+})
+console.log(newArr);
+
+
+
+//map
+
+const mynumber=[1,2,3,4,5,6,7,8,9,10];
+// const newnums=mynumber.map((num)=>{
+//     return num+10;
+
+// })
+
+const newnums=mynumber
+            .map((num)=>num*10)
+            .map((num)=>num+1)       //chaning mrthod;
+            .filter((num)=>num>=40);
+
+
+
+console.log(mynumber);
+console.log(newnums);
+
+
+
+
+// reduce
+
+const array1=[1,2,3,4,5,6];
+
+const sum=array1.reduce((accumulator,currentVlaue)=>accumulator+currentVlaue)
+console.log(sum);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
