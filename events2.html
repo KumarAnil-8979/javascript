@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> JS DEVELOPER</h1>
+    <button id="stop">Stop</button>
+    <script>
+        // setTimeout(function (){
+        //     console.log("anil");
+        // },2000)
+
+
+            const say=function(){
+                console.log("anil");
+            }
+
+            //setTimeout(say,2000);
+
+
+           // document.querySelector("h1").innerHTML="React Developer";
+           const changeText=function(){
+            document.querySelector("h1").innerHTML="React Develpper";
+           }
+            const changeMe=setTimeout(changeText,2000);
+
+           document.querySelector("#stop").addEventListener("click",function(){
+            clearTimeout(changeMe);
+            console.log("stopped");                                 //clearTimeout ek refereence ko leta hai  jis settimout ko hum rokhan 
+                                                                    //chante hai
+            });
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
